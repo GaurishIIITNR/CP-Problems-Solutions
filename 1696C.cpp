@@ -1,0 +1,145 @@
+//HHM
+// DATE: 25-06-2022
+// TIME:21:08:45
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long int
+#define dbl double
+#define deb(v) cout << #v << " " << v << "\n"
+#define deb2(v, k) cout << #v << " " << v << "\n" \
+                        << #k << " " << k << "\n"
+#define vin(name, size)        \
+    for (i = 0; i < size; i++) \
+    cin >> name[i]
+#define vout(name)                    \
+    for (i = 0; i < name.size(); i++) \
+        cout << name[i] << " ";       \
+    cout << endl
+#define vec(type1, name) vector<type1> name
+#define vp(type1, type2, name) vector<pair<type1, type2>> name
+#define st(type, name) set<type> name
+#define mpp(type1, type2, name) map<type1, type2> name
+#define pb push_back
+#define MP make_pair
+#define F first
+#define S second
+#define all(x) x.begin(), x.end()
+#define part(x, a, b) x.begin() + a, x.begin() + b
+#define Pi 3.1415926535897932384626
+ll power(ll a, ll b)
+{
+    ll res = 1;
+    for (ll i = 1; i <= b; i++)
+        res *= a;
+    return res;
+}
+// set<ll>st;
+// map<ll,ll>mp;
+// string s;cin>>s;
+
+void HHM()
+{
+    ll i, j, k;
+    ll n;
+    cin >> n >> k;
+    vector<pair<ll, ll>> mp, mp1;
+    ll sm1 = 0, sm2 = 0;
+    for (i = 0; i < n; i++)
+    {
+        ll d;
+        cin >> d;
+        sm1 += d;
+        ll c = 0;
+        while (d > 0)
+        {
+            if (d % k == 0)
+                d = d / k;
+            else
+            {
+                if (mp.size() >= 1 && mp[mp.size() - 1].F == d)
+                    mp[mp.size() - 1].S += power(k, c);
+                else
+                    mp.pb({d, power(k, c)});
+                // mp[d] += power(k, c);
+                break;
+            }
+            c++;
+        }
+    }
+    ll r;
+    cin >> r;
+    for (i = 0; i < r; i++)
+    {
+        ll d;
+        cin >> d;
+        sm2 += d;
+
+        ll c = 0;
+        while (d > 0)
+        {
+            if (d % k == 0)
+                d = d / k;
+            else
+            {
+                if (mp1.size() >= 1 && mp1[mp1.size() - 1].F == d)
+                    mp1[mp1.size() - 1].S += power(k, c);
+                else
+                    mp1.pb({d, power(k, c)});
+                // mp1[d] += power(k, c);
+                break;
+            }
+            c++;
+        }
+    }
+    if (sm1 != sm2)
+    {
+        cout << "No\n";
+        return;
+    }
+    // for (i = 0; i < mp.size() - 1; i++)
+    // {
+    //     // cout<<mp[i].F <<" "<<mp[i].S<<"\n";
+    //     if (mp[i].F == mp[i + 1].F)
+    //     {
+    //         mp[i].S += mp[i + 1].S;
+    //         mp.erase(mp.begin() + i + 1);
+    //         i--;
+    //     }
+    // }
+    // for (i = 0; i < mp1.size() - 1; i++)
+    // {
+    //     if (mp1[i].F == mp1[i + 1].F)
+    //     {
+    //         mp1[i].S += mp1[i + 1].S;
+    //         mp1.erase(mp1.begin() + i + 1);
+    //         i--;
+    //     }
+    // }
+    if (mp1 == mp)
+        cout << "Yes\n";
+    else
+        cout << "No\n";
+
+    // vector<ll>v(n,0);
+    // vin(v,n);
+
+    return;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
+    ll t = 1;
+    cin >> t;
+
+    while (t--)
+    {
+        HHM();
+    }
+}
+// freopen("input.txt", "r", stdin);
+// freopen("output.txt", "w", stdout);

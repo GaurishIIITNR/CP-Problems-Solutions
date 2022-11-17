@@ -1,0 +1,1 @@
+for s in[*open(0)][2::2]:*_,x,y=0,*sorted(map(int,s.split()));print('YNEOS'[y>x+1::2])

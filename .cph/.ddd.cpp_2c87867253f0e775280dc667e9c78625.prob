@@ -1,0 +1,1 @@
+{"name":"Local: ddd","url":"d:\\CP Workspace\\ddd.cpp","tests":[{"id":1658933175193,"input":"1\n2\n3\n4\n5\n6\n78\n88\n42\n44\n56","output":"0\n1\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CP Workspace\\ddd.cpp","group":"local","local":true}

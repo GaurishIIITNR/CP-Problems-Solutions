@@ -1,11 +1,3 @@
-/*
-========================================================================================
-                               // ****  ***** //
-                              // ***AUTHOR: GAURISH OJHA** //
-                             // *****DATE: 24-02-2022**** //
-                            // ******TIME:21:03:07****** //
-========================================================================================
-*/
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
@@ -17,12 +9,12 @@ using namespace std;
 #define vp(type1, type2, name) vector<pair<type1, type2>> name
 #define st(type, name) set<type> name
 #define pb push_back
-//#define mp make_pair
+// #define mp make_pair
 #define fir first
 #define sec second
 #define all(x) x.begin(), x.end()
 #define part(x, a, b) x.begin() + a, x.begin() + b
-#define Pi 3.1415926535897932384626
+// #define Pi 3.1415926535897932384626
 
 void gaurish()
 {

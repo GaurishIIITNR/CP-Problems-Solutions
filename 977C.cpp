@@ -1,65 +1,87 @@
-/*
-========================================================================================
-                               // ****  ***** //
-                              // ***AUTHOR: GAURISH OJHA** //
-                             // *****DATE: 24-02-2022**** //
-                            // ******TIME:20:19:50****** //
-========================================================================================
-*/
-#include <bits/stdc++.h>
-using namespace std;
-#define ll long long int
+// हर हर महादेव
+#define F first
+#define S second
 #define dbl double
-#define deb(v) cout << #v << " " << v << "\n"
-#define foi(i, base, n, k) for (i = base; i < n; i += k)
-#define fod(i, base, n, k) for (i = base; i >= n; i -= k)
-#define vec(type1, name) vector<type1> name
-#define vp(type1, type2, name) vector<pair<type1, type2>> name
-#define st(type, name) set<type> name
+using namespace std;
 #define pb push_back
-#define mp make_pair
-#define fir first
-#define sec second
-#define all(x) x.begin(), x.end()
-#define part(x, a, b) x.begin() + a, x.begin() + b
-#define Pi 3.1415926535897932384626
-
-void gaurish()
-{
-    ll a, b, i, j, k;
-    cin >> a >> b;
-    vec(ll, v)(a);
-    foi(i, 0, a, 1)
-            cin >>
-        v[i];
-    sort(all(v));
-    if (b == 0)
-    {
-        if ((v[0] - 1) >= 1)
-            cout << (v[0] - 1);
-        else
-            cout << -1;
+#define vin(name, size)        \
+    for (i = 0; i < size; i++) \
+    cin >> name[i]
+#define vout(name)                    \
+    for (i = 0; i < name.size(); i++) \
+        cout << name[i] << " ";       \
+    cout << endl
+#define vvin(name, rowss, colmn)    \
+    for (i = 0; i < rowss; i++)     \
+    {                               \
+        for (j = 0; j < colmn, j++) \
+            cin >> name[i][j];      \
     }
-    else if (v.size() != b && v[b - 1] == v[b])
-        cout << -1;
-    else
-        cout << v[b - 1];
+#define vvout(name, rowss, colmn)      \
+    for (i = 0; i < rowss; i++)        \
+    {                                  \
+        for (j = 0; j < colmn, j++)    \
+            cout << name[i][j] << " "; \
+        cout << endl;                  \
+    }
+#include <bits/stdc++.h>
+#define ll long long int
+void dfs(vector<ll> adj[], ll node, vector<bool> &vis)
+{
+    vis[node] = 1;
+    for (auto x : adj[node])
+        if (!vis[x])
+            dfs(adj, x, vis);
+}
+// ll dream[];
+ll mod = 1000000007;
+#define all(x) x.begin(), x.end()
+#define mem memset(dream, -1, sizeof(dream))
+#define Pi 3.1415926535897932384626
+#define deb(v) cout << #v << " " << v << "\n"
+#define deb2(v, k) cout << #v << " " << v << "\n" \
+                        << #k << " " << k << "\n"
+void HHM()
+{
+    // mem;
+    ll i, j, k;
+    ll n;
+    cin >> n >> k;
+    // map<ll, ll> mp;
+    vector<ll> v(n, 0);
+    for (auto &x : v)
+        cin >> x;
+    sort(all(v));
+    if (k == 0)
+    {
+        if (v[0] == 1)
+        {
+            cout << -1 << "\n";
+            return;
+        }
+        cout <<(v[0] - 1) << "\n";
+        return;
+    }
+    if (k < n && v[k] == v[k - 1])
+    {
+        cout << -1 << "\n";
+        return;
+    }
+    cout << v[k - 1] << "\n";
+
     return;
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    /*#ifndef ONLINE_JUDGE
-             freopen("in.txt", "r", stdin);
-             freopen("output.txt", "w", stdout);
-    #endif*/
+    ios_base::sync_with_stdio(0), cin.tie(0);
     ll t = 1;
     // cin >> t;
-
-    while (t--)
+    for (ll i = 1; i <= t; i++)
     {
-        gaurish();
+        // cout << "Case #" <<i<< ": ";
+        HHM();
     }
 }
+// freopen("input.txt", "r", stdin);
+// freopen("output.txt", "w", stdout);
